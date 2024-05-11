@@ -60,21 +60,21 @@ const Navbar = () => {
           <div className="flex items-center gap-1 lg:gap-5">
             
             <div className="">
-              <img className="object-cover w-10 lg:w-16 h-10 lg:h-16 rounded-full ring ring-gray-300 dark:ring-gray-600 my-anchor-element" src={user?.photoURL || 'Image not found'} alt="" />
-              <Tooltip className="z-20" variant="info" anchorSelect=".my-anchor-element" place="top">
+              <img className="object-cover w-10 lg:w-14 h-10 lg:h-14 rounded-full ring ring-gray-300 dark:ring-gray-600 my-anchor-element" src={user?.photoURL || 'Image not found'} alt="" />
+              <Tooltip className="z-20 text-[#ffb606]" variant="" anchorSelect=".my-anchor-element" place="top">
                 {user?.displayName}
               </Tooltip>
             </div>
             <Link to='/'>
-              <button onClick={handleLogOut} className="px-1 lg:px-3 font-semibold text-xs lg:text-base text-white bg-[#b18b5e] rounded py-2">Sign out</button>
+              <button onClick={handleLogOut} className="px-1 lg:px-3 font-semibold text-xs lg:text-base text-white bg-[#ffb606] rounded py-2">Sign out</button>
             </Link>
           </div> :
           <div>
             <Link to='/login'>
-              <button className="px-2 lg:px-3 font-semibold text-xs lg:text-base text-white bg-[#b18b5e] rounded py-2">Login</button>
+              <button className="px-2 lg:px-3 font-semibold text-xs lg:text-base text-white bg-[#ffb606] rounded py-2">Login</button>
             </Link>
             <Link to='/register'>
-              <button className="px-2 lg:px-3 ml-1 lg:ml-2 font-semibold text-xs lg:text-base text-white bg-[#b18b5e] rounded py-2">Register</button>
+              <button className="px-2 lg:px-3 ml-1 lg:ml-2 font-semibold text-xs lg:text-base text-white bg-[#ffb606] rounded py-2">Register</button>
             </Link>
           </div>
         }
