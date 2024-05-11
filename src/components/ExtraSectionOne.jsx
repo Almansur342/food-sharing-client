@@ -1,7 +1,7 @@
 import about from '../assets/abou.jpg'
 const ExtraSectionOne = () => {
   return (
-    <div className="container px-4 mx-auto my-10">
+    <div className="container px-4 mx-auto my-16">
       <h1 className="text-3xl font-semibold"><span className="border-b-2 border-b-[#ffb606]">About</span> <span className="text-[#ffb606]">Be aHand</span></h1>
       <div className='flex justify-between w-full items-center gap-4'>
         <div className='w-3/5'>
