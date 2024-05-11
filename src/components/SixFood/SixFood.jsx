@@ -21,7 +21,7 @@ const SixFood = ({food}) => {
     <p className="border-b-2 mx-auto border-b-[#ffb606]  my-4"></p>
     <div className="flex flex-wrap justify-between pt-3 space-x-2">
 						<span>{expired_date}</span>
-						<span>{food_quantity}</span>
+						<span>Quantity: {food_quantity}</span>
 					</div>
           <p className="">Pickup Location: {pickup_location}</p>
     <div className="flex-1">
