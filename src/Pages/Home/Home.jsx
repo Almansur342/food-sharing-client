@@ -6,7 +6,7 @@ import SixFood from './../../components/SixFood/SixFood';
 
 const Home = () => {
   const sixFood = useLoaderData();
-  console.log(sixFood);
+  // console.log(sixFood);
   return (
     <div>
      <Carousel></Carousel>

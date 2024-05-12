@@ -1,7 +1,8 @@
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const SixFood = ({food}) => {
-  const{food_image,food_name,food_quantity,pickup_location,donator,expired_date,additional_notes} = food || {}
+  const{food_image,food_name,food_quantity,pickup_location,donator,expired_date,additional_notes,_id} = food || {}
   return (
     <motion.div
     whileHover={{ y: -10 }}
@@ -25,7 +26,7 @@ const SixFood = ({food}) => {
 					</div>
           <p className="">Pickup Location: {pickup_location}</p>
     <div className="flex-1">
-      <button className="px-2 lg:px-5 font-semibold text-xs lg:text-base text-white bg-[#ffb606] rounded py-2 my-3">Buy Now</button>
+      <Link to={`/details/${_id}`} className="px-2 lg:px-5 font-semibold text-xs lg:text-base text-white bg-[#ffb606] rounded py-2 my-3">View Details</Link>
     </div>
   </div>
 </motion.div>
