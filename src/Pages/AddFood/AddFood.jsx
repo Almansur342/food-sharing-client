@@ -59,7 +59,6 @@ const AddFood = () => {
       console.log(err)
     }
   }
-
   
 
   return (
