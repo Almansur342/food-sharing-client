@@ -4,15 +4,27 @@ import axios from "axios";
 
 const Available = () => {
  const [foods,setFoods] = useState([]);
- const [sort, setSort] = useState('')
+ const [sort, setSort] = useState('');
+ const [search, setSearch] = useState('');
+
  useEffect(()=>{
   const getData = async () => {
-    const {data} = await axios(`${import.meta.env.VITE_API_URL}/allFood?sort=${sort}`)
+    const {data} = await axios(`${import.meta.env.VITE_API_URL}/allFood?sort=${sort}&search=${search}`)
     setFoods(data);
   }
   getData()
- },[sort])
+ },[sort,search])
 
+ const handleReset = () =>{
+  setSort('')
+  setSearch('')
+ }
+
+ const handleSearch = (e) =>{
+ e.preventDefault()
+ const text = e.target.search.value;
+ setSearch(text);
+ }
   return (
     <div className="container px-4 my-16 mx-auto">
       <h1 className="text-3xl text-center font-semibold mb-4"><span className="">Explore</span> <span className="text-[#ffb606]"> Available Food</span></h1>
@@ -20,7 +32,7 @@ const Available = () => {
     <p className="border-b-2 mx-auto border-b-[#ffb606] w-24 mt-4 mb-16"></p>
     <div className='flex flex-col mb-10 md:flex-row justify-center items-center gap-8 '>
 
-          <form>
+          <form onSubmit={handleSearch}>
             <div className='flex p-1 overflow-hidden border rounded-lg    '>
               <input
                 className='px-6 py-2 input-bordered font-bold'
@@ -50,7 +62,7 @@ const Available = () => {
               <option value='asc'>Ascending Order</option>
             </select>
           </div>
-          <button className='px-2 lg:px-5 ml-1 lg:ml-2 font-semibold text-xs lg:text-base text-white bg-[#ffb606] rounded py-2'>Reset</button>
+          <button onClick={handleReset} className='px-2 lg:px-5 ml-1 lg:ml-2 font-semibold text-xs lg:text-base text-white bg-[#ffb606] rounded py-2'>Reset</button>
         </div>
 
 
