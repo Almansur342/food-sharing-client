@@ -21,13 +21,14 @@ const Navbar = () => {
   }
 
   const navLink = <div className="flex items-center">
-    <li className="font-bold text-base hover:text-[#ffb606] hover:border-b border-b-[#b18b5e]"><NavLink to='/' className={({ isActive }) => isActive ? '  text-[#ffb606]' : 'text-[#131313CC] hover:text-[#ffb606]'}>Home</NavLink></li>
+    <li className="font-bold text-sm hover:text-[#ffb606] hover:border-b border-b-[#b18b5e]"><NavLink to='/' className={({ isActive }) => isActive ? '  text-[#ffb606]' : 'text-[#131313CC] hover:text-[#ffb606]'}>Home</NavLink></li>
 
-    <li className="font-bold text-base hover:text-[#b18b5e] shadow-none hover:border-b border-b-[#ffb606] bg-white"><NavLink to='/addFood' className={({ isActive }) => isActive ? 'text-[#ffb606] ' : 'hover:text-[#ffb606] text-[#131313CC]'}>Add Food</NavLink></li>
+    <li className="font-bold text-sm hover:text-[#b18b5e] shadow-none hover:border-b border-b-[#ffb606] bg-white"><NavLink to='/addFood' className={({ isActive }) => isActive ? 'text-[#ffb606] ' : 'hover:text-[#ffb606] text-[#131313CC]'}>Add Food</NavLink></li>
 
-    <li className="font-bold text-base hover:text-[#ffb606] shadow-none hover:border-b border-b-[#b18b5e] bg-white"><NavLink to='/myFood' className={({ isActive }) => isActive ? 'text-[#ffb606] ' : 'hover:text-[#ffb606] text-[#131313CC]'}>Manage My Foods</NavLink></li>
+    <li className="font-bold text-sm hover:text-[#ffb606] shadow-none hover:border-b border-b-[#b18b5e] bg-white"><NavLink to='/myFood' className={({ isActive }) => isActive ? 'text-[#ffb606] ' : 'hover:text-[#ffb606] text-[#131313CC]'}>Manage My Foods</NavLink></li>
 
-    <li className="font-bold text-base hover:text-[#ffb606] shadow-none hover:border-b border-b-[#ffb606] bg-white"><NavLink to='/available' className={({ isActive }) => isActive ? 'text-[#ffb606] ' : 'hover:text-[#ffb606] text-[#131313CC]'}>Available Foods</NavLink></li>
+    <li className="font-bold text-sm hover:text-[#ffb606] shadow-none hover:border-b border-b-[#ffb606] bg-white"><NavLink to='/available' className={({ isActive }) => isActive ? 'text-[#ffb606] ' : 'hover:text-[#ffb606] text-[#131313CC]'}>Available Foods</NavLink></li>
+    <li className="font-bold text-sm hover:text-[#ffb606] shadow-none hover:border-b border-b-[#ffb606] bg-white"><NavLink to='/requestedFood' className={({ isActive }) => isActive ? 'text-[#ffb606] ' : 'hover:text-[#ffb606] text-[#131313CC]'}>My Food Request</NavLink></li>
 
 
 

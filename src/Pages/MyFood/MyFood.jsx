@@ -62,7 +62,7 @@ const MyFood = () => {
                     className='py-3.5 px-4 text-sm font-normal text-left rtl:text-right text-gray-500'
                   >
                     <div className='flex items-center gap-x-3'>
-                      <span>Title</span>
+                      <span>Food name</span>
                     </div>
                   </th>
 

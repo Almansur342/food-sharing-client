@@ -17,6 +17,7 @@ const Details = () => {
   // const requestor = user?.email;
   const { register, handleSubmit, formState: { errors }, } = useForm();
   const [startDate, setStartDate] = useState(new Date(expired_date) || new Date());
+  const [currentDate, setCurrentDate] = useState(new Date());
   const navigate = useNavigate()
   const Toast = Swal.mixin({
     toast: true,
@@ -34,6 +35,7 @@ const Details = () => {
     const { food_image, food_name, pickup_location, additional_notes, food_quantity, food_status,requestor } = data;
     // console.log(user?.email, selectedSubcategory,image,itemName,description,price,rating,customization,time,stockStatus);
     const expired_date = new Date(startDate).toLocaleDateString();
+    const request_date = new Date(currentDate).toLocaleDateString();
     const info = {
       food_image,
       food_name,
@@ -42,6 +44,7 @@ const Details = () => {
       food_quantity,
       food_status,
       expired_date,
+      request_date,
       requestor,
       donator: {
         image: donator?.image,
@@ -150,6 +153,16 @@ const Details = () => {
                               <DatePicker
                                 className="border p-2 rounded-md"
                                 selected={startDate} 
+                                // onChange={(date) => setStartDate(date)}
+                                 />
+                            </div>
+                            <div className="form-control">
+                              <label className="label">
+                                <span className="label-text font-semibold text-base">Request Date:</span>
+                              </label>
+                              <DatePicker
+                                className="border p-2 rounded-md"
+                                selected={currentDate} 
                                 // onChange={(date) => setStartDate(date)}
                                  />
                             </div>
