@@ -5,6 +5,7 @@ import Swal from "sweetalert2";
 import { AuthContext } from "../../Firebase/AuthProvider";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import axios from "axios";
 
 
 const Details = () => {
@@ -48,8 +49,19 @@ const Details = () => {
         email: donator?.email
       }
     }
-    // console.log(requestor);
-    console.log(info);
+
+    try {
+      const {data} = await axios.post(`${import.meta.env.VITE_API_URL}/request`, info)
+      console.log(data)
+      Toast.fire({
+        icon: 'success',
+        title: 'Food updated successfully',
+      })
+      navigate('/myFood')  
+    
+    } catch (err) {
+      console.log(err)
+    }
   }
   return (
     <div className="container mx-auto px-4 my-10 flex justify-between gap-6">
