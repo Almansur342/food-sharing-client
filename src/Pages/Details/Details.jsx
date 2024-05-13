@@ -11,7 +11,7 @@ import axios from "axios";
 const Details = () => {
   const loadedFood = useLoaderData();
   // console.log(loadedFood);
-  const { food_image, food_name, food_quantity, pickup_location, donator, expired_date, additional_notes, status } = loadedFood || {}
+  const { food_image, food_name, food_quantity, pickup_location, donator, expired_date, additional_notes, food_status,_id } = loadedFood || {}
 
   const { user } = useContext(AuthContext);
   // const requestor = user?.email;
@@ -32,7 +32,7 @@ const Details = () => {
   });
 
   const onSubmit = async (data) => {
-    const { food_image, food_name, pickup_location, additional_notes, food_quantity, food_status,requestor } = data;
+    const { food_image, food_name, pickup_location, additional_notes, food_quantity, food_status,requestor, } = data;
     // console.log(user?.email, selectedSubcategory,image,itemName,description,price,rating,customization,time,stockStatus);
     const expired_date = new Date(startDate).toLocaleDateString();
     const request_date = new Date(currentDate).toLocaleDateString();
@@ -60,12 +60,19 @@ const Details = () => {
         icon: 'success',
         title: 'Food updated successfully',
       })
-      navigate('/myFood')  
+      navigate('/requestedFood')  
     
     } catch (err) {
       console.log(err)
     }
   }
+
+  const handleStatus = async (id,prevStatus,food_status) =>{
+    // console.log(id,prevStatus,status)
+    const {data} = await axios.patch(`${import.meta.env.VITE_API_URL}/updateStatus/${id}`,{food_status})
+    console.log(data);
+  }
+
   return (
     <div className="container mx-auto px-4 my-10 flex justify-between gap-6">
       <div className="w-3/5 bg-[#f8f5ef] rounded p-5">
@@ -223,7 +230,9 @@ const Details = () => {
                           </div>
                           <div className="form-control">
                           
-                            <button className="btn mt-6 bg-[#ffb606] text-white text-base lg:text-lg mb-3 uppercase">Request</button>
+                            <button onClick={()=> 
+                              handleStatus(_id, food_status,'In Progress')
+                            } className="btn mt-6 bg-[#ffb606] text-white text-base lg:text-lg mb-3 uppercase">Request</button>
                           </div>
                         </form>
 
