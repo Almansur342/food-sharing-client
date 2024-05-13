@@ -108,7 +108,9 @@ const AddFood = () => {
             <label className="label">
               <span className="label-text font-semibold text-base">Food Status:</span>
             </label>
-            <input type="text" placeholder="Food Status" name="food_status" className="input input-bordered"
+            <input type="text"
+            defaultValue="available"
+            placeholder="Food Status" name="food_status" className="input input-bordered"
               {...register("food_status", { required: true })}
             />
             {errors.status && <span className="text-red-500">This field is required</span>}
@@ -126,9 +128,9 @@ const AddFood = () => {
               <span className="label-text font-semibold text-base">Additional notes:</span>
             </label>
             <input type="text" placeholder=" Additional notes" name="additional_notes" className="input input-bordered"
-              {...register("data", { required: true })}
+              {...register("additional_notes", { required: true })}
             />
-            {errors.data && <span className="text-red-500">This field is required</span>}
+            {errors.additional_notes && <span className="text-red-500">This field is required</span>}
           </div>
         </div>
 

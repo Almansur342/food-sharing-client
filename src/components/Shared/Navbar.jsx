@@ -27,7 +27,7 @@ const Navbar = () => {
 
     <li className="font-bold text-base hover:text-[#ffb606] shadow-none hover:border-b border-b-[#b18b5e] bg-white"><NavLink to='/myArtCraft' className={({ isActive }) => isActive ? 'text-[#ffb606] ' : 'hover:text-[#ffb606] text-[#131313CC]'}>My Art&Craft List</NavLink></li>
 
-    <li className="font-bold text-base hover:text-[#ffb606] shadow-none hover:border-b border-b-[#ffb606] bg-white"><NavLink to='/allArtCraft' className={({ isActive }) => isActive ? 'text-[#ffb606] ' : 'hover:text-[#ffb606] text-[#131313CC]'}>All Art & craft Items</NavLink></li>
+    <li className="font-bold text-base hover:text-[#ffb606] shadow-none hover:border-b border-b-[#ffb606] bg-white"><NavLink to='/available' className={({ isActive }) => isActive ? 'text-[#ffb606] ' : 'hover:text-[#ffb606] text-[#131313CC]'}>Available Foods</NavLink></li>
 
 
 
