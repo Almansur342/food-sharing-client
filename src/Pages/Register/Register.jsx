@@ -7,6 +7,7 @@ import log from '../../assets/login.json'
 import Lottie from "lottie-react";
 
 import Swal from 'sweetalert2'
+import axios from "axios";
 
 const Register = () => {
 
@@ -28,7 +29,7 @@ const Register = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const { register, handleSubmit, formState: { errors },} = useForm();
-  const onSubmit = data => {
+  const onSubmit = async(data) => {
     console.log(data);
     const {email,password,name,photo} = data;
     console.log(email,password,name,photo);
@@ -54,23 +55,27 @@ const Register = () => {
           return;
         }
      
-    createUser(email,password)
-    .then(result =>{
-      console.log(result.user);
-      Swal.fire({
-        title: 'success',
-        text: 'User created successfully',
-        icon: 'success',
-        confirmButtonText: 'Cool'
-      })
-      updateUserProfile(name,photo)
-          .then(()=>{
-          navigate(location?.state ? location.state : '/')
-          })
-    })
-    .catch(error =>{
-      console.error(error);
-    })
+     try {
+        const result = await createUser(email,password)
+        console.log(result)
+        await  updateUserProfile(name,photo)
+        const {data} = await axios.post(`${import.meta.env.VITE_API_URL}/jwt`, {email: result?.user?.email},{withCredentials:true})
+        console.log(data)
+        Swal.fire({
+          title: 'success',
+          text: 'User Logged In successfully',
+          icon: 'success',
+          confirmButtonText: 'Cool'
+        })
+        navigate(location?.state ? location.state : '/')
+      } catch (err) {
+        console.log(err)
+        Toast.fire({
+          icon: 'error',
+          title: `${err?.message}`,
+        })
+      }
+    
   }
 
   return (

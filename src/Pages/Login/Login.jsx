@@ -9,6 +9,7 @@ import log from '../../assets/login.json'
 // import 'animate.css';
 import { useForm } from "react-hook-form";
 import Swal from 'sweetalert2'
+import axios from "axios";
 
 
 const Login = () => {
@@ -30,47 +31,56 @@ const Login = () => {
   const { register, handleSubmit, formState: { errors },} = useForm();
   const { signIn, googleLogin,} = useContext(AuthContext);
 
-  const onSubmit = data =>{
+  const onSubmit = async(data) =>{
     const {email,password} = data;
     console.log(email,password);
-    signIn(email, password)
-      .then(result => {
-        Swal.fire({
-          title: 'success',
-          text: 'User Logged in successfully',
-          icon: 'success',
-          confirmButtonText: 'Cool'
-        })
-        console.log(result.user);
-        navigate(location?.state ? location.state : '/')
+     signIn(email, password)
+     try {
+      const result = await googleLogin()
+      console.log(result.user)
+      const {data} = await axios.post(`${import.meta.env.VITE_API_URL}/jwt`, {email: result?.user?.email},{withCredentials:true})
+      console.log(data)
+      Swal.fire({
+        title: 'success',
+        text: 'User Logged In successfully',
+        icon: 'success',
+        confirmButtonText: 'Cool'
+      })
+      navigate(location?.state ? location.state : '/')
+    } catch (err) {
+      console.log(err)
+      Toast.fire({
+        icon: 'error',
+        title: `${err?.message}`,
       })
 
-      .catch(error => {
-        Toast.fire({
-          icon: 'error',
-          title: 'password is not matching',
-        })
-        console.error(error);
-
-      })
-
+    }
   }
  
-  const handleGoogleLogin = () => {
-    googleLogin()
-      .then(result => {
-        Swal.fire({
-          title: 'success',
-          text: 'User Logged In successfully',
-          icon: 'success',
-          confirmButtonText: 'Cool'
-        })
-        navigate(location?.state ? location.state : '/')
+  const handleGoogleLogin = async() => {
+    try {
+      const result = await googleLogin()
+      console.log(result.user)
+      const {data} = await axios.post(`${import.meta.env.VITE_API_URL}/jwt`, {email: result?.user?.email},{withCredentials:true})
+      console.log(data)
+      Swal.fire({
+        title: 'success',
+        text: 'User Logged In successfully',
+        icon: 'success',
+        confirmButtonText: 'Cool'
+      })
+      navigate(location?.state ? location.state : '/')
+    } catch (err) {
+      console.log(err)
+      Toast.fire({
+        icon: 'error',
+        title: `${err?.message}`,
       })
 
-      .catch(error => {
-        console.error(error);
-      })
+    }
+    
+      
+        
   }
 
 
