@@ -8,6 +8,7 @@ import Available from "../Pages/Available/Available";
 import AddFood from "../Pages/AddFood/AddFood";
 import PrivateRoute from "./PrivateRoute";
 import Details from "../Pages/Details/Details";
+import MyFood from "../Pages/MyFood/MyFood";
 const router = createBrowserRouter([
   {
     path:'/',
@@ -30,7 +31,7 @@ const router = createBrowserRouter([
       {
         path:'/available',
         element:<Available></Available>,
-        loader: ()=> fetch(`${import.meta.env.VITE_API_URL}/allFood`)
+        
       },
       {
         path:'/addFood',
@@ -38,8 +39,12 @@ const router = createBrowserRouter([
       },
       {
         path:'/details/:id',
-        element:<PrivateRoute><Details></Details></PrivateRoute>
-       
+        element:<PrivateRoute><Details></Details></PrivateRoute>,
+        loader: ({params})=> fetch(`${import.meta.env.VITE_API_URL}/details/${params.id}`)
+      },
+      {
+        path: '/myFood',
+        element:<MyFood></MyFood>
       }
     ]
 
