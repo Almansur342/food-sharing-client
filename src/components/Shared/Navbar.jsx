@@ -1,13 +1,13 @@
 import { Link, NavLink, useNavigate, } from "react-router-dom";
 import logo from "../../assets/logo.png"
-import { useContext} from "react";
 import 'react-tooltip/dist/react-tooltip.css'
 import { Tooltip } from 'react-tooltip'
-import { AuthContext } from "../../Firebase/AuthProvider";
+
+import useAuth from "../../hooks/useAuth";
 
 const Navbar = () => {
  
-  const { user, logOut } = useContext(AuthContext);
+  const { user, logOut } = useAuth();;
   const navigate = useNavigate();
   const handleLogOut = () => {
     logOut()

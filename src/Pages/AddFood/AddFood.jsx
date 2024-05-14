@@ -1,11 +1,12 @@
-import { useContext, useState } from "react";
+import {  useState } from "react";
 import { useForm } from "react-hook-form";
 import Swal from 'sweetalert2'
 import { useNavigate } from 'react-router-dom';
-import { AuthContext } from "../../Firebase/AuthProvider";
+
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import axios from "axios";
+import useAuth from "../../hooks/useAuth";
 
 
 const AddFood = () => {
@@ -22,7 +23,7 @@ const AddFood = () => {
       toast.onmouseleave = Swal.resumeTimer;
     }
   });
-  const { user } = useContext(AuthContext);
+  const { user } = useAuth();
   // console.log(user);
   const { register, handleSubmit, formState: { errors }, } = useForm();
 

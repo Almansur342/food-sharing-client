@@ -1,11 +1,11 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useLoaderData, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
-import { AuthContext } from "../../Firebase/AuthProvider";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import axios from "axios";
+import useAuth from "../../hooks/useAuth";
 
 
 const Details = () => {
@@ -13,7 +13,7 @@ const Details = () => {
   // console.log(loadedFood);
   const { food_image, food_name, food_quantity, pickup_location, donator, expired_date, additional_notes, food_status,_id } = loadedFood || {}
 
-  const { user } = useContext(AuthContext);
+  const { user } = useAuth();
   // const requestor = user?.email;
   const { register, handleSubmit, formState: { errors }, } = useForm();
   const [startDate, setStartDate] = useState(new Date(expired_date) || new Date());

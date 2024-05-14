@@ -1,20 +1,20 @@
-import { useContext, useEffect, useState } from "react";
-import { AuthContext } from "../../Firebase/AuthProvider";
+import {useEffect, useState } from "react";
 import axios from "axios";
+import useAuth from "../../hooks/useAuth";
 
 const MyRequestedFood = () => {
-  const { user } = useContext(AuthContext)
+  const { user } = useAuth();
   const [foods, setFoods] = useState([])
   useEffect(() => {
     const getData = async () => {
-      const { data } = await axios(`${import.meta.env.VITE_API_URL}/requestedFood/${user?.email}`,{withCredentials:true})
+      const { data } = await axios(`${import.meta.env.VITE_API_URL}/requestedFood/${user?.email}`)
       setFoods(data)
     }
     getData()
   }, [user?.email])
 
   
-  // console.log(foods);
+  console.log(foods);
   return (
     <div className='flex flex-col mt-6 container px-4 mx-auto my-10'>
     <div className='-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8'>
