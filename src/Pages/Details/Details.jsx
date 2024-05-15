@@ -58,7 +58,7 @@ const Details = () => {
       console.log(data)
       Toast.fire({
         icon: 'success',
-        title: 'Food updated successfully',
+        title: 'Food request send successfully',
       })
       navigate('/requestedFood')  
     
