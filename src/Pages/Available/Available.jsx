@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import AllFood from "../../components/AllFood/AllFood";
 import axios from "axios";
+import { Helmet } from "react-helmet-async";
 
 const Available = () => {
  const [foods,setFoods] = useState([]);
@@ -27,6 +28,9 @@ const Available = () => {
  }
   return (
     <div className="container px-4 my-16 mx-auto">
+      <Helmet>
+        <title>Be a Hand|Available Foods</title>
+      </Helmet>
       <h1 className="text-xl lg:text-3xl text-center font-semibold mb-4"><span className="">Explore</span> <span className="text-[#ffb606]"> Available Food</span></h1>
     <p className="text-center mt-2 text-lg font-medium">Explore our assortment of donated food items, ranging from fresh produce to pantry staples. Find what you need to create delicious meals or simply replenish your supplies.</p>
     <p className="border-b-2 mx-auto border-b-[#ffb606] w-24 mt-4 mb-16"></p>

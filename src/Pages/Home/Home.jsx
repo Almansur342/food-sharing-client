@@ -3,12 +3,16 @@ import Carousel from "../../components/Banner/Carousel";
 import ExtraSectionOne from "../../components/ExtraSectionOne";
 import ExtraSectionTwo from './../../components/ExtraSectionTwo';
 import SixFood from './../../components/SixFood/SixFood';
+import { Helmet } from "react-helmet-async";
 
 const Home = () => {
   const sixFood = useLoaderData();
   // console.log(sixFood);
   return (
     <div>
+      <Helmet>
+        <title>Be a Hand</title>
+      </Helmet>
       <Carousel></Carousel>
       <div className="container px-4 my-16 mx-auto ">
         <h1 className="text-xl lg:text-3xl text-center font-semibold mb-4"><span className="">OUR</span> <span className="text-[#ffb606]">FEATURES</span></h1>

@@ -10,6 +10,7 @@ import log from '../../assets/login.json'
 import { useForm } from "react-hook-form";
 import Swal from 'sweetalert2'
 import axios from "axios";
+import { Helmet } from "react-helmet-async";
 
 
 const Login = () => {
@@ -86,6 +87,9 @@ const Login = () => {
 
   return (
     <div className="bg-white flex max-w-md md:max-w-5xl lg:max-w-7xl p-1 md:p-10 lg:p-10">
+       <Helmet>
+        <title>Be a Hand|Login</title>
+      </Helmet>
       <Lottie className="w-[300px]" animationData={log}></Lottie>
       <div className="bg-white shadow-md border w-4/5 md:w-4/5 lg:w-2/5 mx-auto p-3 lg:p-9 my-5">
       <form onSubmit={handleSubmit(onSubmit)} className=" space-y-3 rounded">

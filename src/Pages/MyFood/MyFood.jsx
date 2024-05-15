@@ -3,6 +3,7 @@ import { AuthContext } from "../../Firebase/AuthProvider";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 const MyFood = () => {
   const { user } = useContext(AuthContext)
@@ -51,6 +52,9 @@ const MyFood = () => {
 }
   return (
     <div className='flex flex-col mt-6 container px-4 mx-auto my-10'>
+       <Helmet>
+        <title>Be a Hand|Manage My Food</title>
+      </Helmet>
       <div className='-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8'>
         <div className='inline-block min-w-full py-2 align-middle md:px-6 lg:px-8'>
           <div className='overflow-hidden border border-gray-200  md:rounded-lg'>

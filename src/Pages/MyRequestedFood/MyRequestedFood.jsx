@@ -1,6 +1,7 @@
 import {useEffect, useState } from "react";
 import axios from "axios";
 import useAuth from "../../hooks/useAuth";
+import { Helmet } from "react-helmet-async";
 
 const MyRequestedFood = () => {
   const { user } = useAuth();
@@ -17,6 +18,9 @@ const MyRequestedFood = () => {
   console.log(foods);
   return (
     <div className='flex flex-col mt-6 container px-4 mx-auto my-10'>
+       <Helmet>
+        <title>Be a Hand|My Food Request</title>
+      </Helmet>
     <div className='-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8'>
       <div className='inline-block min-w-full py-2 align-middle md:px-6 lg:px-8'>
         <div className='overflow-hidden border border-gray-200  md:rounded-lg'>

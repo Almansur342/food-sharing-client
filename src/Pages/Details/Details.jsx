@@ -6,6 +6,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import axios from "axios";
 import useAuth from "../../hooks/useAuth";
+import { Helmet } from "react-helmet-async";
 
 
 const Details = () => {
@@ -75,6 +76,9 @@ const Details = () => {
 
   return (
     <div className="container mx-auto px-4 my-10 flex flex-col lg:flex-row justify-between gap-6">
+       <Helmet>
+        <title>Be a Hand|Details</title>
+      </Helmet>
       <div className="w-full lg:w-3/5 bg-[#f8f5ef] rounded p-5">
         <section className="">
           <div className="gap-8 flex flex-col md:flex-row  lg:flex-row ">

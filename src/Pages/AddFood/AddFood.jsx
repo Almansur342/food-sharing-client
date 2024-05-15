@@ -7,6 +7,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import axios from "axios";
 import useAuth from "../../hooks/useAuth";
+import { Helmet } from "react-helmet-async";
 
 
 const AddFood = () => {
@@ -64,6 +65,9 @@ const AddFood = () => {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className=" space-y-3  rounded py-10 lg:px-16 bg-[#f8f5ef] mt-6">
+      <Helmet>
+        <title>Be a Hand|Add Foods</title>
+      </Helmet>
       <h1 className="text-xl lg:text-3xl text-center font-semibold text-[#34373f] ">Contribute to Our Food Drive</h1>
       <p className="text-base lg:text-xl font-medium text-center">Join hands in ending hunger, one meal at a time. <br /> Donate your surplus food today.</p>
       <div className="flex flex-col lg:flex-row justify-between gap-10">
