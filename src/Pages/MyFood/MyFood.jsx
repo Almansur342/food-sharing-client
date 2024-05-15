@@ -4,10 +4,11 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import { Helmet } from "react-helmet-async";
+import { useQuery } from "@tanstack/react-query";
 
 const MyFood = () => {
   const { user } = useContext(AuthContext)
-  const [foods, setFoods] = useState([])
+  // const [foods, setFoods] = useState([])
   const Toast = Swal.mixin({
     toast: true,
     position: "top-end",
@@ -20,14 +21,21 @@ const MyFood = () => {
     }
   });
 
-  useEffect(() => {
+  const {
+    data: foods = [],
+    refetch,isLoading,isError,error} =  useQuery({
+      queryFn: ()=> getData(),
+      queryKey:['foods'],
+    })
+
+  // useEffect(() => {
     
-    getData()
-  }, [user])
+  //   getData()
+  // }, [user])
 
   const getData = async () => {
     const { data } = await axios(`${import.meta.env.VITE_API_URL}/myFood/${user?.email}`)
-    setFoods(data)
+    return data
   }
   console.log(foods);
 
@@ -50,6 +58,8 @@ const MyFood = () => {
     })
   }
 }
+
+if(isLoading) return <span className="loading loading-spinner loading-lg"></span>
   return (
     <div className='flex flex-col mt-6 container px-4 mx-auto my-10'>
        <Helmet>

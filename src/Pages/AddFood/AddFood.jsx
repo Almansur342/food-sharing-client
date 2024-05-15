@@ -46,7 +46,7 @@ const AddFood = () => {
         email: user?.email
       }
     }
-    console.log(info);
+    // console.log(info);
     try {
       const {data} = await axios.post(`${import.meta.env.VITE_API_URL}/addFood`, info)
       console.log(data)

@@ -2,20 +2,30 @@ import {useEffect, useState } from "react";
 import axios from "axios";
 import useAuth from "../../hooks/useAuth";
 import { Helmet } from "react-helmet-async";
+import { useQuery } from "@tanstack/react-query";
 
 const MyRequestedFood = () => {
   const { user } = useAuth();
-  const [foods, setFoods] = useState([])
-  useEffect(() => {
-    const getData = async () => {
-      const { data } = await axios(`${import.meta.env.VITE_API_URL}/requestedFood/${user?.email}`)
-      setFoods(data)
-    }
-    getData()
-  }, [user?.email])
+ const {
+  data: foods = [],
+  refetch,isLoading,isError,error} =  useQuery({
+    queryFn: ()=> getData(),
+    queryKey:['foods'],
+  })
+  console.log(foods)
+  // const [foods, setFoods] = useState([])
+  // useEffect(() => {
+    
+  //   getData()
+  // }, [user?.email])
 
+  const getData = async () => {
+    const { data } = await axios(`${import.meta.env.VITE_API_URL}/requestedFood/${user?.email}`)
+    return data
+  }
   
-  console.log(foods);
+  // console.log(foods,isLoading);
+  if(isLoading) return <span className="loading loading-spinner loading-lg"></span>
   return (
     <div className='flex flex-col mt-6 container px-4 mx-auto my-10'>
        <Helmet>
