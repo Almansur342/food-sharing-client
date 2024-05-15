@@ -7,6 +7,12 @@ const Available = () => {
  const [foods,setFoods] = useState([]);
  const [sort, setSort] = useState('');
  const [search, setSearch] = useState('');
+ const [twoColumn, setTwoColumn] = useState(false);
+
+  // Handler to toggle the layout
+  const changeLayout = () => {
+    setTwoColumn(prevState => !prevState);
+  };
 
  useEffect(()=>{
   const getData = async () => {
@@ -69,8 +75,11 @@ const Available = () => {
           <button onClick={handleReset} className='px-2 lg:px-5 ml-1 lg:ml-2 font-semibold text-xs lg:text-base text-white bg-[#ffb606] rounded py-2'>Reset</button>
         </div>
 
-
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+            <div className="flex items-center justify-center">
+            <button onClick={changeLayout} className="px-2 lg:px-7 mb-5 ml-1 lg:ml-2 font-semibold text-xs lg:text-base text-white bg-[#ffb606] rounded py-2">Layout</button>
+            </div>
+        
+      <div className={`grid grid-cols-1 md:grid-cols-2 ${twoColumn ? 'lg:grid-cols-2' : 'lg:grid-cols-3'} gap-5`}>
       {
         foods.filter(fo=> fo.food_status === "available")
         .map(food => <AllFood
