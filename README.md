@@ -1,8 +1,28 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Be a Hand - Food Donation Platform
 
-Currently, two official plugins are available:
+Welcome to **Be a Hand**, a platform to facilitate food donations and help those in need.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Live Link
+
+Visit our live site here: [Be a Hand](https://food-sharing-b90bf.web.app)
+
+## Project Overview
+
+- **Add Food for Donation**: Users can add food items for donation.
+- **Request Food**: Individuals can request available food items.
+- **Manage Donations**: Donors can view, update, or delete their donations.
+- **Responsive Design**: Optimized for both desktop and mobile devices.
+- **Rich Animations**: Enhances user experience with engaging visuals.
+
+## Technologies Used
+
+- **React.js**
+- **Express.js**
+- **MongoDB**
+- **Firebase**
+- **Tailwind CSS**
+- **Responsive Design**
+- **Animations**
+
+
