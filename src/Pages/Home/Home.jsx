@@ -11,10 +11,10 @@ const Home = () => {
     <div>
       <Carousel></Carousel>
       <div className="container px-4 my-16 mx-auto ">
-        <h1 className="text-3xl text-center font-semibold mb-4"><span className="">OUR</span> <span className="text-[#ffb606]">FEATURES</span></h1>
-        <p className="text-center mt-2 text-lg font-medium">Share the Bounty connects food donors with those in need, offering food donation listings, a recipe aggregator, community engagement, and a focus on sustainability.</p>
+        <h1 className="text-xl lg:text-3xl text-center font-semibold mb-4"><span className="">OUR</span> <span className="text-[#ffb606]">FEATURES</span></h1>
+        <p className="text-center mt-2 text-base lg:text-lg font-medium">Share the Bounty connects food donors with those in need, offering food donation listings, a recipe aggregator, community engagement, and a focus on sustainability.</p>
         <p className="border-b-2 mx-auto border-b-[#ffb606] w-24 mt-4 mb-16"></p>
-        <div className="grid grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {
             sixFood.map(food => <SixFood
               key={food._id}

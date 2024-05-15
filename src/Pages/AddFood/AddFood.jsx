@@ -63,11 +63,11 @@ const AddFood = () => {
   
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className=" space-y-3  rounded py-10 px-16 bg-[#f8f5ef] mt-6">
-      <h1 className="text-3xl text-center font-semibold text-[#34373f] ">Contribute to Our Food Drive</h1>
-      <p className="text-xl font-medium text-center">Join hands in ending hunger, one meal at a time. <br /> Donate your surplus food today.</p>
-      <div className="flex justify-between gap-10">
-        <div className="w-3/5">
+    <form onSubmit={handleSubmit(onSubmit)} className=" space-y-3  rounded py-10 lg:px-16 bg-[#f8f5ef] mt-6">
+      <h1 className="text-xl lg:text-3xl text-center font-semibold text-[#34373f] ">Contribute to Our Food Drive</h1>
+      <p className="text-base lg:text-xl font-medium text-center">Join hands in ending hunger, one meal at a time. <br /> Donate your surplus food today.</p>
+      <div className="flex flex-col lg:flex-row justify-between gap-10">
+        <div className="w-full lg:w-3/5">
           <div className="form-control">
             <label className="label">
               <span className="label-text font-semibold text-base">Food Image:</span>
@@ -134,7 +134,7 @@ const AddFood = () => {
           </div>
         </div>
 
-        <div className="w-2/5 shadow-2xl mt-10 bg-white h-96 px-4 py-10">
+        <div className="w-full lg:w-2/5 shadow-2xl mt-10 bg-white h-96 px-4 py-10">
           <h1 className="text-center text-2xl font-semibold">Donar Information</h1>
           <p className="border-b-2 mx-auto border-b-[#ffb606] w-24 mt-4"></p>
           <div className="form-control relative">

@@ -74,11 +74,11 @@ const Details = () => {
   }
 
   return (
-    <div className="container mx-auto px-4 my-10 flex justify-between gap-6">
-      <div className="w-3/5 bg-[#f8f5ef] rounded p-5">
+    <div className="container mx-auto px-4 my-10 flex flex-col lg:flex-row justify-between gap-6">
+      <div className="w-full lg:w-3/5 bg-[#f8f5ef] rounded p-5">
         <section className="">
           <div className="gap-8 flex flex-col md:flex-row  lg:flex-row ">
-            <div className=" bg-[#f7f4ef] h-40 w-96 lg:mt-3">
+            <div className=" bg-[#f7f4ef] lg:h-40 lg:w-96 lg:mt-3">
               <img src={food_image} alt="" className="object-cover rounded" />
             </div>
             <div className="flex flex-col  rounded-sm lg:max-w-xl xl:max-w-xl lg:text-left">
@@ -92,7 +92,6 @@ const Details = () => {
                   <h1 className="text-[#131313B3] text-base"><span className="text-[#ffb606]">Food Status</span>: {status}</h1>
                   <h1 className="text-[#131313B3] text-base"><span className="text-[#ffb606]">Expired Data</span>: {expired_date}</h1>
                   <hr className="my-4" />
-
 
 
                   <div className="">
@@ -252,7 +251,7 @@ const Details = () => {
           </div>
         </section>
       </div>
-      <div className="w-2/5 shadow-2xl p-6 ">
+      <div className="w-full lg:w-2/5 shadow-2xl p-6 ">
         <h1 className="text-center font-medium text-2xl mb-3
         ">Donar information</h1>
         <p className="border-b-2 mx-auto border-b-[#ffb606] w-24 mt-3 mb-4"></p>

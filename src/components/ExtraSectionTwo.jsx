@@ -8,10 +8,10 @@ import { motion } from 'framer-motion';
 const ExtraSectionTwo = () => {
   return (
     <div className="container mx-auto px-4 my-20">
-      <h1 className="text-3xl text-center font-semibold"><span className="">OUR</span> <span className="text-[#ffb606] ">MISSION</span></h1>
-      <p className="text-center mt-2 text-lg font-medium ">Your Attention Is Changed The Part Of World.Give a helping hand to those who need it!</p>
+      <h1 className="text-xl lg:text-3xl text-center font-semibold"><span className="">OUR</span> <span className="text-[#ffb606] ">MISSION</span></h1>
+      <p className="text-center mt-2 text-base lg:text-lg font-medium ">Your Attention Is Changed The Part Of World.Give a helping hand to those who need it!</p>
       <p className="border-b-2 mx-auto border-b-[#ffb606] w-24 mt-4 mb-16"></p>
-      <div className='grid grid-cols-3 gap-10'>
+      <div className='grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-10'>
         <motion.div
         whileHover={{ y: -10 }}
       transition={{ type: "spring", stiffness: 300 }}
