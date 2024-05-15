@@ -49,7 +49,7 @@ const MyFood = () => {
             icon: "success"
           });
     }
-    getData()
+    refetch(foods)
   } catch (err) {
     console.log(err.message)
     Toast.fire({
