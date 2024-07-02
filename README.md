@@ -30,6 +30,7 @@ Visit our live site here: [Be a Hand](https://food-sharing-b90bf.web.app)
 - **MongoDB**
 - **Firebase**
 - **Tailwind CSS**
+- **JWT token**
 
   ## Run this project locally
 
