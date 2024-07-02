@@ -15,6 +15,14 @@ Visit our live site here: [Be a Hand](https://food-sharing-b90bf.web.app)
 - **Responsive Design**: Optimized for both desktop and mobile devices.
 - **Rich Animations**: Enhances user experience with engaging visuals.
 
+
+## Key Features
+
+1. **Food Donation Management**: Users can easily add, update, or delete food donations, making it simple to contribute to the community.
+2. **Food Request System**: Individuals in need can browse and request available food items, ensuring they get the help they need efficiently.
+3. **Responsive Design with Rich Animations**: The website is optimized for both desktop and mobile devices, offering a visually engaging and seamless user experience across all platforms.
+
+
 ## Technologies Used
 
 - **React.js**
@@ -22,7 +30,11 @@ Visit our live site here: [Be a Hand](https://food-sharing-b90bf.web.app)
 - **MongoDB**
 - **Firebase**
 - **Tailwind CSS**
-- **Responsive Design**
-- **Animations**
+
+  ## Run this project locally
+
+  - **Clone this project using git clone**
+  - **npm install**
+  - **npm run dev**
 
 
